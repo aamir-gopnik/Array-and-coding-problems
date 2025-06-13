@@ -41,6 +41,6 @@ public class MaximizeProfit {
     }
 
     public static int maxNum(int a, int b) {
-        return a > b ? a : b;
+        return Math.max(a, b);
     }
 }
