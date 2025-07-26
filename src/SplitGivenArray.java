@@ -76,4 +76,23 @@ public class SplitGivenArray {
         }
         return arrayList;
     }
+
+    public static List<int[]> splitArrayOptimized(int[] arr, int winSize) {
+        if (winSize <= 0 || winSize >= arr.length) {
+            return List.of(arr);
+        }
+
+        List<int[]> result = new ArrayList<>();
+
+        int index = 0;
+        while (index < arr.length) {
+            int size = Math.min(winSize, arr.length - index);
+            int[] chunk = new int[size];
+            System.arraycopy(arr, index, chunk, 0, size);
+            result.add(chunk);
+            index += winSize;
+        }
+
+        return result;
+    }
 }
