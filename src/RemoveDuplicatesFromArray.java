@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class RemoveDuplicatesFromArray {
 
     public static void main(String[] args) {
-        int arr[] = new int[]{1,1,1,1,2,2,3,3,3,4,4,5};
+        int[] arr = new int[]{1,1,1,1,2,2,3,3,3,4,4,5};
         int n = arr.length;
         System.out.println(Arrays.toString(removeDuplicatesInSortedArray(arr,n)));
         System.out.println(Arrays.toString(removeDuplicatesInPlace(arr,n)));
@@ -11,7 +11,7 @@ public class RemoveDuplicatesFromArray {
 
     //solution using the O(n) space using a result array.
     public static int[] removeDuplicatesInSortedArray(int[] arr, int n) {
-        int resultArr[] = new int[n];
+        int[] resultArr = new int[n];
         int i = 0;
         int k = 0;
         while(i < n-1) {
@@ -39,14 +39,11 @@ public class RemoveDuplicatesFromArray {
         int i = 0;
         int j = 1;
         while(j < n) {
-            if(arr[j] != arr[i]) {
+            if(arr[i] != arr[j]) {
                 arr[i+1] = arr[j];
                 i++;
-                j++;
             }
-            else {
-                j++;
-            }
+            j++;
         }
         return arr;
     }
