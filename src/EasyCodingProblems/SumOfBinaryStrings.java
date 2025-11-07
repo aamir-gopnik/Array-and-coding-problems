@@ -1,5 +1,6 @@
 package EasyCodingProblems;
 
+// Leetcode 67
 public class SumOfBinaryStrings {
 
     public static void main(String[] args) {
